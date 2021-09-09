@@ -7,9 +7,20 @@
     <title> Ali Karami </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
+        :root {
+            --main-theme: #55BC86;
+            --bg-color: #090000;
+            --tooltip-bg-color: #0900007c;
+            --text-color: ghostwhite;
+            --main-bg-color: #1D1F20;
+            --profile-bg-color: #1C1C1C;
+            --scrollbar-thumb-bg-color: #646467;
+            --icon-color: #808083;
+            --border-color: #2C2C2C;
+        }
         ::selection {
-            background-color: #55BC86;
-            color: #1D1F20;
+            background-color: var(--icon-color);
+            color: var(--main-bg-color);
         }
         p, h2, h4 {
             margin-block-start: 0;
@@ -24,9 +35,9 @@
         }
         .tooltip .tooltiptext {
             visibility: hidden;
-            background-color: #0900007c;
+            background-color: var(--tooltip-bg-color);
             width: auto;
-            color: ghostwhite;
+            color: var(--text-color);
             padding: .5em;
             right: 50px;
             font-size: .85em;
@@ -40,33 +51,28 @@
         }
         body {
             margin: 0;
-            background-color: #090000;
+            background-color: var(--bg-color);
         }
-        body::-webkit-scrollbar-track, #summary::-webkit-scrollbar-track
-        {
-            background-color: #1C1C1C;
+        html {
+            scrollbar-color: var(--main-theme) var(--profile-bg-color);
+            scrollbar-width: thin;
         }
-        body::-webkit-scrollbar, #summary::-webkit-scrollbar
-        {
-            width: 10px;
-            background-color: #1C1C1C;
+        #summary, #research {
+            scrollbar-color: var(--scrollbar-thumb-bg-color) var(--profile-bg-color);
+            scrollbar-width: thin;
         }
-        body::-webkit-scrollbar-thumb, #summary::-webkit-scrollbar-thumb
+        html::-webkit-scrollbar, #summary::-webkit-scrollbar, #research::-webkit-scrollbar
         {
-            background-color: #55BC86;
+            width: 8px;
+            background-color: var(--profile-bg-color);
         }
-        #summary::-webkit-scrollbar-track
+        html::-webkit-scrollbar-thumb
         {
-            background-color: #1C1C1C;
+            background-color: var(--main-theme);
         }
-        #summary::-webkit-scrollbar
+        #summary::-webkit-scrollbar-thumb, #research::-webkit-scrollbar-thumb
         {
-            width: 5px;
-            background-color: #1C1C1C;
-        }
-        #summary::-webkit-scrollbar-thumb
-        {
-            background-color: #646467;
+            background-color: var(--scrollbar-thumb-bg-color);
         }
         .icon-wrapper {
             display: flex;
@@ -76,11 +82,11 @@
             height: 46.67px;
         }
         div.icon-wrapper:nth-child(1) {
-            background-color: #55BC86;
+            background-color: var(--main-theme);
         }
         div.icon-wrapper:nth-child(1) > a > i {
             font-size: 1.5em;
-            color: #1D1F20;
+            color: var(--main-bg-color);
         }
         aside {
             display: grid;
@@ -96,20 +102,20 @@
 
         }
         aside > ul > .icon-wrapper > a > i:not(.bi-person), div.icon-wrapper:nth-child(3) > a > i, #social-media > li > a > i {
-            color: #808083;
+            color: var(--icon-color);
             font-size: 1.5em;
         }
         #social-media > li > a:hover > i {
-            color: ghostwhite;
+            color: var(--text-color);
         }
         .bi-person {
             font-size: 2em;
         }
         .bi-person, div.icon-wrapper:nth-child(3) > a > i {
-            color: #55BC86;
+            color: var(--main-theme);
         }
         main {
-            background-color: #1D1F20;
+            background-color: var(--main-bg-color);
             margin: 50px auto;
             width: 800px;
             height: 600px;
@@ -119,7 +125,7 @@
         #profile {
             height: 650px;
             margin-top: -25px;
-            background-color: #1C1C1C;
+            background-color: var(--profile-bg-color);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -129,7 +135,7 @@
             width: 150px;
             height: 150px;
             border-radius: 100px;
-            border: 5px solid #1D1F20;
+            border: 5px solid var(--main-bg-color);
             margin: 50px auto;
         }
         #summary {
@@ -140,11 +146,15 @@
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         #about-me > h2 {
-            color: ghostwhite;
+            color: var(--text-color);
         }
         #about-me > h4 {
-            color: #808083;
+            color: var(--icon-color);
             margin-top: .5em;
+        }
+        #about-me > h4 > a {
+            color: var(--icon-color);
+            text-decoration: none;
         }
         #about-me > h4:nth-child(3) {
             margin-top: 1.5em;
@@ -169,14 +179,14 @@
             padding-bottom: 1.5em;
         }
         #summary > div:not(#links) {
-            border-bottom: 1px solid #2C2C2C;
+            border-bottom: 1px solid var(--border-color);
         }
         #summary > div > h2 {
-            color: ghostwhite;
+            color: var(--text-color);
             margin-bottom: .25em;
         }
         #summary > div > p {
-            color: #808083;
+            color: var(--icon-color);
             text-align: justify;
             font-size: .85em;
         }
@@ -187,12 +197,12 @@
             grid-row-gap: 1em;
         }
         .link-title {
-            color: ghostwhite;
+            color: var(--text-color);
             height: 30px;
         }
         .link-title > a {
             text-decoration: none;
-            color: ghostwhite;
+            color: var(--text-color);
             height: inherit;
             display: inline-block;
         }
@@ -205,7 +215,7 @@
             display: block;
             height: 27px;
             padding-top: 3px;
-            color: #55BC86;
+            color: var(--main-theme);
         }
         .link-title > a > h4 > span {
             font-weight: 300;
@@ -216,73 +226,52 @@
         }
         .link-desc {
             text-align: justify;
-            color: #808083;
+            color: var(--icon-color);
             font-size: .85em;
             padding: 0 1em;
         }
         #educational, #software, #research, #honors, #teaching {
             display: none;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            color: ghostwhite;
+            color: var(--text-color);
             text-align: justify;
             height: 625px;
             margin-top: -25px;
-            background-color: #1C1C1C;
+            background-color: var(--profile-bg-color);
             padding: 25px 50px 0 50px;
         }
         #research {
-            position: relative;
-            padding: 0;
-            height: 650px;
+            overflow-y: scroll;
         }
         #research > article {
-            position: absolute;
-            background-color: blue;
-            width: 90%;
-            margin: 25px 5% 0 5%;
+            background-color: var(--main-bg-color);
         }
-        #research > article > div {
-            background-color: #1D1F20;
-            position: absolute;
-            top: 50px;
-            padding: 1.5em;
+        #research > article {
+            margin-bottom: 25px;
         }
-        #research > article:not(.active) > div {
-            display: none;
-        }
-        #research > article::before {
-            position: absolute;
-            content: attr(title);
-            width: 100px;
-            padding: 0 5px;
-            display: flex;
-            justify-content: center;
+        .article-header {
+            background-color: var(--main-theme);
+            padding: 15px;
             align-items: center;
-            height: 40px;
-            background-color: #1D1F20;
-            color: #808083;
+            justify-content: space-between;
+            display: flex;
             cursor: pointer;
         }
-        #research > article:nth-child(2)::before {
-            left: 110px;
+        .article-header > i:nth-child(2) {
+            display: none;
         }
-        #research > article:nth-child(3)::before {
-            left: 220px;
+        #research > article.active > .article-header > i:nth-child(2) {
+            display: inline;
         }
-        /* #research > article:nth-child(4)::before {
-            left: 330px;
-        } */
-        #research > article:not(.active)::before {
-            top: 10px;
+        #research > article.active > .article-header > i:nth-child(3) {
+            display: none;
         }
-        #research > article:not(.active):hover::before {
-            color: ghostwhite;
+        .article-body {
+            padding: 15px;
+            display: none;
         }
-        #research > article.active::before {
-            background-color: #55BC86;
-            height: 50px;
-            cursor: unset;
-            color: #1D1F20;
+        #research > article.active > .article-body {
+            display: block;
         }
     </style>
 </head>
@@ -327,7 +316,7 @@
                 <h4>Graduate Electrical Engineering</h4>
                 <h4><i class="bi bi-geo-alt-fill"></i> Tehran, Iran</h4>
                 <h4><i class="bi bi-telephone-fill"></i> +98 939 112 0742</h4>
-                <h4><i class="bi bi-envelope-fill"></i> alikarami1999@ut.ac.ir</h4>
+                <h4><i class="bi bi-envelope-fill"></i> <a href="mailto:alikarami1999@ut.ac.ir">alikarami1999@ut.ac.ir</a> </h4>
             </div>
             <div id="social-media-wrapper">
                 <ul id="social-media">
@@ -444,18 +433,33 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut consectetur voluptas tempore animi sed soluta magni eos ex! Reiciendis, exercitationem possimus? Dicta in et cum? Ea iste dolorum error quia.</p>
         </section>
         <section id="research">
-            <article onclick="toggleTab(this)" class="active" title="Project 1">
-                <div>
+            <article>
+                <div class="article-header" onclick="toggleTab(this)">
+                    <p>Project 1</p>
+                    <i class="bi bi-caret-up"></i>
+                    <i class="bi bi-caret-down"></i>
+                </div>
+                <div class="article-body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, maxime. Vel dolores laborum corrupti voluptatum, incidunt ad, molestiae dolor facilis sint sequi possimus ducimus, dignissimos nobis eum sed et. Tenetur laboriosam voluptas, optio numquam odio sequi dicta est omnis obcaecati nostrum temporibus, consectetur aspernatur, quisquam expedita eos modi praesentium rem officia facilis voluptate! Ipsam blanditiis aut exercitationem velit iusto quidem dolor, dolorem ut facilis. Doloremque excepturi perspiciatis autem aliquam fugit error quam possimus ullam voluptatibus ad vero dignissimos pariatur praesentium ipsum sed dolore, perferendis voluptate maiores nulla hic. Sint hic consequatur dolorum fugiat aspernatur necessitatibus alias dolore reprehenderit quisquam. Minus!
                 </div>
             </article>
-            <article onclick="toggleTab(this)" title="Project 2">
-                <div>
+            <article>
+                <div class="article-header" onclick="toggleTab(this)">
+                    <p>Project 2</p>
+                    <i class="bi bi-caret-up"></i>
+                    <i class="bi bi-caret-down"></i>
+                </div>
+                <div class="article-body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quae iste beatae fuga tenetur! Aliquam ex magni labore dolorem eum. Doloribus reprehenderit dignissimos maxime rerum omnis, officia iusto culpa odit eligendi aliquam quia velit harum cum molestiae aperiam earum vel id voluptatum quisquam eveniet quam. Maxime, ea hic, repellendus itaque ad repudiandae distinctio amet, nemo veniam quas natus consequuntur aliquam fuga necessitatibus ipsa velit tempora incidunt officiis reprehenderit nesciunt. Cumque consequuntur veniam accusantium quaerat, ullam quibusdam numquam iure modi asperiores delectus qui quas quasi aperiam quisquam odio, molestiae hic atque beatae, et omnis dolor nisi. Obcaecati illo culpa aliquam corporis eveniet voluptas, exercitationem harum ducimus asperiores sequi quae laudantium repudiandae nulla voluptates ad sed! Ipsum facilis explicabo quae maiores alias corporis unde dolores repellat, sapiente debitis quos impedit animi architecto, voluptate tempore odio, ullam asperiores laboriosam veritatis accusamus possimus? Impedit error sapiente sunt optio minima esse, veritatis veniam? Qui, quia quisquam cupiditate neque corporis illum officia dolorum consequatur. Repudiandae facilis velit fugiat culpa eaque corporis quos quidem, asperiores nobis, error harum rerum? At facere minima quo!
                 </div>
             </article>
-            <article onclick="toggleTab(this)" title="Project 3">
-                <div>
+            <article>
+                <div class="article-header" onclick="toggleTab(this)">
+                    <p>Project 3</p>
+                    <i class="bi bi-caret-up"></i>
+                    <i class="bi bi-caret-down"></i>
+                </div>
+                <div class="article-body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis aut nemo nisi debitis pariatur, eligendi eveniet possimus consequatur eaque animi asperiores numquam velit cumque reiciendis. Consequatur fugiat quisquam sed molestiae nobis est a dolorem repellendus, quidem dicta iusto blanditiis quia doloremque esse illo, ratione explicabo error enim quasi officiis exercitationem eligendi dolore aliquid. Itaque ab voluptas sunt doloremque tempora!
                 </div>
             </article>
@@ -471,25 +475,26 @@
     <noscript>Your browser does not support JavaScript!</noscript>
     <script>
         function toggle(element, iClass) {
-            document.querySelectorAll('.icon-wrapper > a > i:not(.bi-cloud-download)').forEach(e => e.style.color = '#808083');
-            document.querySelector('.icon-wrapper > a > i.' + iClass).style.color = '#55BC86';
+            document.querySelectorAll('.icon-wrapper > a > i:not(.bi-cloud-download)').forEach(e => e.style.color = 'var(--icon-color)');
+            document.querySelector('.icon-wrapper > a > i.' + iClass).style.color = 'var(--main-theme)';
             document.querySelectorAll('section:not(' + element + ')').forEach(e => e.style.display = 'none');
             document.getElementById(element).style.display = 'unset';
             document.getElementsByTagName('main')[0].style.gridTemplateColumns = '50px 1fr';
         }
         function showProfile() {
-            document.querySelectorAll('.icon-wrapper > a > i:not(.bi-cloud-download)').forEach(e => e.style.color = '#808083');
-            document.querySelector('.icon-wrapper > a > i.bi-person').style.color = '#55BC86';
+            document.querySelectorAll('.icon-wrapper > a > i:not(.bi-cloud-download)').forEach(e => e.style.color = 'var(--icon-color)');
+            document.querySelector('.icon-wrapper > a > i.bi-person').style.color = 'var(--main-theme)';
             document.querySelectorAll('section:not(#profile):not(#summary)').forEach(e => e.style.display = 'none');
             document.getElementById('profile').style.display = 'flex';
             document.getElementById('summary').style.display = 'unset';
             document.getElementsByTagName('main')[0].style.gridTemplateColumns = '50px 2fr 3fr';
         }
         function toggleTab(e) {
-            if (!e.classList.contains('active'))
-            {
-                document.querySelector('article.active').classList.remove('active');
-                e.classList.add('active');
+            if (!e.parentElement.classList.contains("active")) {
+                e.parentElement.classList.add("active")
+            }
+            else {
+                e.parentElement.classList.remove("active")
             }
         }
     </script>
